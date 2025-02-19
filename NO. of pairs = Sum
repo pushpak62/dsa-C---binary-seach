@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int arr[] = {1, 5, 7, 5, 8, 9, 11, 12}; 
+    int n = sizeof(arr) / sizeof(arr[0]); 
+    
+    int i,j,sum=12,ctr=0;
+    for(i=0;i<n;i++){
+        for(j=i+1;j<n;j++){
+            if(arr[i]+arr[j]==sum){
+                ctr++;
+            }
+        }
+    }
+     cout << "Number of pairs whose sum equals 12: "; 
+    cout << ctr; 
+    return 0;
+}
