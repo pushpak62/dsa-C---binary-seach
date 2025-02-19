@@ -1,0 +1,37 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <climits>
+using namespace std;
+
+void three_largest(int arr[], int arr_size)
+{
+    int i,first,second,three;
+    if(arr_size<3){
+        cout<<"invaild input";
+    }
+    three=second=first=INT_MIN;
+    for(int i=0;i<arr_size;i++){
+        if(arr[i]>first){
+            three=second;
+            second=first;
+            first=arr[i];
+        }
+        else if(arr[i]>second){
+            three=second;
+            second=arr[i];
+        }
+        else if(three>arr[i]){
+            three=arr[i];
+        }
+    }
+    cout<<first<<second<<three;
+}
+
+int main(){
+    int nums[]={1,2,6,4,8,7,9};
+    int n = sizeof(nums)/sizeof(nums[0]); 
+    three_largest(nums, n);
+
+
+    return 0;
+}
