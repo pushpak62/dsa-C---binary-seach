@@ -1,0 +1,26 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int removeduplicate(vector<int>&nums){
+    if(nums.empty()) return 0;
+    
+    int uniqueindex =1;
+    
+    for(int i=1;i<nums.size();i++){
+        if(nums[i]!=nums[i-1]){
+            nums[uniqueindex]=nums[i];
+            uniqueindex++;
+        }
+    }
+    return uniqueindex;
+}
+
+int main(){
+    vector<int> nums = {1, 1, 2, 3, 3, 4, 5, 5};
+    int n = removeduplicate(nums);
+    
+    for(int i=0;i<n;i++){
+        cout<<nums[i]<<" ";
+    }
+}
